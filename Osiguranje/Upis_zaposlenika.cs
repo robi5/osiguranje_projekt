@@ -59,7 +59,7 @@ namespace Osiguranje
                 MessageBox.Show("Niste upisali sva polja!");
             }
 
-            // upis u C# bazu podataka (baza.mdf) 
+            
 
             else {
 

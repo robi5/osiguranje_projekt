@@ -37,21 +37,9 @@ namespace Osiguranje
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            string query = "SELECT * FROM Polica";
-            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataAdapter sda = new SqlDataAdapter();
-
-            sda.SelectCommand = cmd;
-            DataTable table = new DataTable();
-            sda.Fill(table);
-            
-            */
 
             Zaposlenik x = new Zaposlenik();
             dataGridView1.DataSource = x.klijent_ctrl();
-
 
         }
 
@@ -59,18 +47,14 @@ namespace Osiguranje
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
             id_pol = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM Polica WHERE Id = '" + id_pol + "'";
-            //con.Open();
-            //cmd.ExecuteNonQuery();
-            //con.Close();
             Zaposlenik x = new Zaposlenik();
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable table = x.cellclick_2(id_pol);
-            //data.Fill(table);
+          
 
             foreach (DataRow dr in table.Rows)
             {
@@ -104,17 +88,6 @@ namespace Osiguranje
                 DialogResult dialogResult = MessageBox.Show("Jeste li sigurni da želite pridodati policu klijentu?"," ", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    /*
-                    DateTime time = DateTime.Now;
-
-                    string query = "INSERT INTO Klijent_polica (Id_klijent, Id_pol, Id_zap, Vrijeme) VALUES ('" + id + "', '" + id_pol + "', '" + x + "', '" + time + "')";
-                    SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Pridodana polica klijentu!");
-                    */
                     
                     Zaposlenik kek = new Zaposlenik();
                     kek.klijentu_dodaj_policu(this.id, this.id_pol, this.x);
