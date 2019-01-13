@@ -49,18 +49,9 @@ namespace Osiguranje
 
             else
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf;Integrated Security=True;Connect Timeout=30");
- 
-                // sql upit       
+                Voditelj a = new Voditelj();
+                a.dodaj_policu(richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
 
-                string query = "INSERT INTO Polica (Tip, Naziv, Vrijednost, Rata) VALUES ('" + richTextBox1.Text + "', '" + richTextBox2.Text + "', '" + richTextBox3.Text + "', '" + richTextBox4.Text + "');";
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-                MessageBox.Show("Dodana polica!");
                 this.Close();
                 new Main_poslovođa().Show();
 

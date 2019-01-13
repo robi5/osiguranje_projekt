@@ -141,6 +141,7 @@
     <Compile Include="Upis_zaposlenika.Designer.cs">
       <DependentUpon>Upis_zaposlenika.cs</DependentUpon>
     </Compile>
+    <Compile Include="Voditelj.cs" />
     <EmbeddedResource Include="dodaj_policu.resx">
       <DependentUpon>dodaj_policu.cs</DependentUpon>
     </EmbeddedResource>
