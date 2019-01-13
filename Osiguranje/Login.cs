@@ -12,6 +12,8 @@ namespace Osiguranje
     class Login : DB
     {
 
+        //test
+
     public int login_zaposlenik(string username, string password)
         {          
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Zaposlenik WHERE username='" + username + "' AND password='" + password + "'", con);
