@@ -51,17 +51,17 @@ namespace Osiguranje
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
-            a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
-            SqlCommand cmd = con.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT ID, Ime, Prezime FROM Klijent WHERE Id = '" + a + "'";
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            DataTable table = new DataTable();
+            a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
+
+            Klijent b = new Klijent();
             SqlDataAdapter data = new SqlDataAdapter(cmd);
-            data.Fill(table);
+            DataTable table = b.cellclick(a);
+           
+
             foreach (DataRow dr in table.Rows)
             {
                 
@@ -70,8 +70,6 @@ namespace Osiguranje
                 textBox4.Text = dr["Prezime"].ToString();
 
             }
-
-            con.Close();
 
         }
 

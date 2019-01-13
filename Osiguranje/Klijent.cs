@@ -50,5 +50,20 @@ namespace Osiguranje
 
         }
 
+    public DataTable cellclick(int a)
+        {
+            int id = a;
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT ID, Ime, Prezime FROM Klijent WHERE Id = '" + id + "'";
+ 
+            cmd.ExecuteNonQuery();
+     
+            DataTable table = new DataTable();
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            data.Fill(table);
+            return table;
+        }
+
     }
 }
