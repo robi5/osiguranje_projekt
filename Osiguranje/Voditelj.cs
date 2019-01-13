@@ -27,5 +27,21 @@ namespace Osiguranje
             
         }
 
+    public void dodaj_zaposlenika(string a1, string b1, string c1, string d1, string e1)
+        {
+
+            string ime = a1;
+            string prezime = b1;
+            string OIB = c1;
+            string username = d1;
+            string password = e1;
+
+            string query = "INSERT INTO Zaposlenik (Ime, Prezime, OIB, username, password) VALUES ('" + ime + "', '" + prezime + "', '" + OIB + "', '" + username + "', '" + password + "');";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Dodan zaposlenik!");
+
+        }
+
     }
 }

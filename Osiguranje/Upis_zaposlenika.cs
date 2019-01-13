@@ -61,25 +61,11 @@ namespace Osiguranje
 
             // upis u C# bazu podataka (baza.mdf) 
 
-            else { 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf;Integrated Security=True;Connect Timeout=30");
-            
-            string ime = textBox1.Text;
-            string prezime = textBox2.Text;
-            string OIB = textBox3.Text;
-            string username = textBox4.Text;
-            string password = textBox5.Text;
+            else {
 
-            // sql upit       
+            Voditelj a = new Voditelj();
+            a.dodaj_zaposlenika(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
 
-            string query = "INSERT INTO Zaposlenik (Ime, Prezime, OIB, username, password) VALUES ('" + ime + "', '" + prezime + "', '" + OIB + "', '" + username + "', '" + password + "');";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            MessageBox.Show("Dodan zaposlenik!");
             this.Close();
             new Main_poslovođa().Show();
 

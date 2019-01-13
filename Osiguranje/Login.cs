@@ -11,8 +11,7 @@ namespace Osiguranje
 {
     class Login : DB
     {
-
-        //test
+        
 
     public int login_zaposlenik(string username, string password)
         {          
