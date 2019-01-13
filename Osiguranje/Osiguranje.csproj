@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92AF6DDF-DE52-4CCE-AB8E-DE3B14D6764B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Osiguranje</RootNamespace>
+    <AssemblyName>Osiguranje</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.109.2\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.109.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bazaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="dodaj_policu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dodaj_policu.Designer.cs">
+      <DependentUpon>dodaj_policu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klijent.cs" />
+    <Compile Include="klijent_control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="klijent_control.Designer.cs">
+      <DependentUpon>klijent_control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs" />
+    <Compile Include="Login_zaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_zaposlenik.Designer.cs">
+      <DependentUpon>Login_zaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_poslovođe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_poslovođe.Designer.cs">
+      <DependentUpon>Login_poslovođe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_poslovođa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_poslovođa.Designer.cs">
+      <DependentUpon>Main_poslovođa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_zaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_zaposlenik.Designer.cs">
+      <DependentUpon>Main_zaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Početna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Početna.Designer.cs">
+      <DependentUpon>Početna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search.Designer.cs">
+      <DependentUpon>search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upis_klijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upis_klijenta.Designer.cs">
+      <DependentUpon>Upis_klijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upis_zaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upis_zaposlenika.Designer.cs">
+      <DependentUpon>Upis_zaposlenika.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="dodaj_policu.resx">
+      <DependentUpon>dodaj_policu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="klijent_control.resx">
+      <DependentUpon>klijent_control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_poslovođe.resx">
+      <DependentUpon>Login_poslovođe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_zaposlenik.resx">
+      <DependentUpon>Login_zaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_poslovođa.resx">
+      <DependentUpon>Main_poslovođa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_zaposlenik.resx">
+      <DependentUpon>Main_zaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Početna.resx">
+      <DependentUpon>Početna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="search.resx">
+      <DependentUpon>search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upis_klijenta.resx">
+      <DependentUpon>Upis_klijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upis_zaposlenika.resx">
+      <DependentUpon>Upis_zaposlenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bazaDataSet.xsc">
+      <DependentUpon>bazaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazaDataSet.xss">
+      <DependentUpon>bazaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet1.xsc">
+      <DependentUpon>bazaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazaDataSet1.xss">
+      <DependentUpon>bazaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

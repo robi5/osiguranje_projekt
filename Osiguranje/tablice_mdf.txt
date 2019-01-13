@@ -1,0 +1,53 @@
+CREATE TABLE [dbo].[Klijent] (
+    [Id]      INT        IDENTITY (1, 1) NOT NULL,
+    [Ime]     NCHAR (10) NOT NULL,
+    [Prezime] NCHAR (10) NOT NULL,
+    [OIB]     NCHAR (10) NOT NULL,
+    [Dat_rod] NCHAR (10) NOT NULL,
+    [Mobitel] NCHAR (10) NOT NULL,
+    [Grad]    NCHAR (10) NOT NULL,
+    [Adresa]  NCHAR (10) NOT NULL,
+    [Id_zap]  INT        NOT NULL,
+    [Vrijeme] DATETIME   NULL,
+    [Spol]    NCHAR (10) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Klijent_polica] (
+    [Id]         INT      IDENTITY (1, 1) NOT NULL,
+    [Id_klijent] INT      NOT NULL,
+    [Id_pol]     INT      NOT NULL,
+    [Id_zap]     INT      NOT NULL,
+    [Vrijeme]    DATETIME NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Polica] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [Tip]        NVARCHAR (50) NOT NULL,
+    [Naziv]      NVARCHAR (50) NOT NULL,
+    [Vrijednost] DECIMAL (18)  NOT NULL,
+    [Rata]       DECIMAL (18)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Voditelj] (
+    [username] NVARCHAR (50) NOT NULL,
+    [password] VARCHAR (50)  NOT NULL,
+    [Ime]      NCHAR (10)    NOT NULL,
+    [Prezime]  NCHAR (10)    NOT NULL,
+    [OIB]      NCHAR (10)    NOT NULL,
+    CONSTRAINT [PK_Voditelj] PRIMARY KEY CLUSTERED ([OIB] ASC)
+);
+
+CREATE TABLE [dbo].[Zaposlenik] (
+    [Ime]      NCHAR (10) NOT NULL,
+    [Prezime]  NCHAR (10) NOT NULL,
+    [OIB]      NCHAR (10) NOT NULL,
+    [username] NCHAR (10) NOT NULL,
+    [password] NCHAR (10) NOT NULL,
+    [ID]       INT        IDENTITY (1, 1) NOT NULL,
+    CONSTRAINT [PK_Zaposlenik] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+

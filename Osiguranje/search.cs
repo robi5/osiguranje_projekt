@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace Osiguranje
+{
+    public partial class search : Form
+    {
+
+        private int x;
+        int a;
+        string id;
+
+        public search(int read)
+        {
+            InitializeComponent();
+            this.x = read;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Main_zaposlenik(this.x).Show();
+        }
+
+        // upis imena za search
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Niste upisali ime!");
+            }
+
+            else
+            {
+
+                string abc = textBox1.Text;
+                string query = "SELECT ID, Ime, Prezime, Dat_rod, Grad, Adresa, Spol FROM Klijent WHERE Ime='" + abc + "'";
+                SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataAdapter sda = new SqlDataAdapter();
+
+                    sda.SelectCommand = cmd;
+                    DataTable table = new DataTable();
+                    sda.Fill(table);
+                    dataGridView1.DataSource = table;
+
+
+            }
+        }
+
+        // pritisak na cell click i onda ispis u textbox
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
+            a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT ID, Ime, Prezime FROM Klijent WHERE Id = '" + a + "'";
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            DataTable table = new DataTable();
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            data.Fill(table);
+            foreach (DataRow dr in table.Rows)
+            {
+                
+                id = dr["Id"].ToString();
+                textBox3.Text = dr["Ime"].ToString();
+                textBox4.Text = dr["Prezime"].ToString();
+
+            }
+
+            con.Close();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox3.Text))
+            {
+                MessageBox.Show("Niste odabrali klijenta!");
+            }
+
+            else
+            {
+                string a = id;
+                string b = textBox3.Text;
+                string c = textBox4.Text;
+                this.Close();
+                new klijent_control(a, b, c, x).Show();
+
+            }
+        }
+    }
+}

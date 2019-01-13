@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model2Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Voditeljs" EntityType="Model2.Voditelj" />
+    <EntitySet Name="Klijents" EntityType="Model2.Klijent" />
+    <EntitySet Name="Zaposlenik_login" EntityType="Model2.Zaposlenik_login" />
+    <EntitySet Name="Policas" EntityType="Model2.Polica" />
+    <AssociationSet Name="VoditeljPolica" Association="Model2.VoditeljPolica">
+      <End Role="Voditelj" EntitySet="Voditeljs" />
+      <End Role="Polica" EntitySet="Policas" />
+    </AssociationSet>
+    <EntitySet Name="Klijent_police" EntityType="Model2.Klijent_police" />
+    <EntitySet Name="Zaposleniks" EntityType="Model2.Zaposlenik" />
+    <AssociationSet Name="ZaposlenikZaposlenik_login" Association="Model2.ZaposlenikZaposlenik_login">
+      <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+      <End Role="Zaposlenik_login" EntitySet="Zaposlenik_login" />
+    </AssociationSet>
+    <AssociationSet Name="ZaposlenikKlijent" Association="Model2.ZaposlenikKlijent">
+      <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+      <End Role="Klijent" EntitySet="Klijents" />
+    </AssociationSet>
+    <AssociationSet Name="PolicaKlijent_police" Association="Model2.PolicaKlijent_police">
+      <End Role="Polica" EntitySet="Policas" />
+      <End Role="Klijent_police" EntitySet="Klijent_police" />
+    </AssociationSet>
+    <AssociationSet Name="KlijentKlijent_police" Association="Model2.KlijentKlijent_police">
+      <End Role="Klijent" EntitySet="Klijents" />
+      <End Role="Klijent_police" EntitySet="Klijent_police" />
+    </AssociationSet>
+    <AssociationSet Name="VoditeljZaposlenik" Association="Model2.VoditeljZaposlenik">
+      <End Role="Voditelj" EntitySet="Voditeljs" />
+      <End Role="Zaposlenik" EntitySet="Zaposleniks" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Voditelj">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" Nullable="false" />
+    <Property Name="Prezime" Type="String" Nullable="false" />
+    <Property Name="OIB" Type="String" Nullable="false" />
+    <Property Name="Property1" Type="String" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" />
+    <NavigationProperty Name="Policas" Relationship="Model2.VoditeljPolica" FromRole="Voditelj" ToRole="Polica" />
+    <NavigationProperty Name="Zaposleniks" Relationship="Model2.VoditeljZaposlenik" FromRole="Voditelj" ToRole="Zaposlenik" />
+  </EntityType>
+  <EntityType Name="Klijent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" Nullable="false" />
+    <Property Name="Prezime" Type="String" Nullable="false" />
+    <Property Name="Dat_rod" Type="String" Nullable="false" />
+    <Property Name="OIB" Type="String" Nullable="false" />
+    <Property Name="Mobitel" Type="String" Nullable="false" />
+    <Property Name="ZaposlenikId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Zaposlenik" Relationship="Model2.ZaposlenikKlijent" FromRole="Klijent" ToRole="Zaposlenik" />
+    <Property Name="ZaposlenikId1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klijent_police" Relationship="Model2.KlijentKlijent_police" FromRole="Klijent" ToRole="Klijent_police" />
+  </EntityType>
+  <EntityType Name="Zaposlenik_login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Start" Type="String" Nullable="false" />
+    <Property Name="Finish" Type="String" Nullable="false" />
+    <Property Name="ZaposlenikId" Type="Int32" Nullable="false" />
+    <Property Name="ZaposlenikId1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Zaposlenik" Relationship="Model2.ZaposlenikZaposlenik_login" FromRole="Zaposlenik_login" ToRole="Zaposlenik" />
+    <Property Name="ZaposlenikId2" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Polica">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" Nullable="false" />
+    <Property Name="Vrijednost" Type="String" Nullable="false" />
+    <NavigationProperty Name="Voditelj" Relationship="Model2.VoditeljPolica" FromRole="Polica" ToRole="Voditelj" />
+    <Property Name="VoditeljId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klijent_police" Relationship="Model2.PolicaKlijent_police" FromRole="Polica" ToRole="Klijent_police" />
+  </EntityType>
+  <Association Name="VoditeljPolica">
+    <End Type="Model2.Voditelj" Role="Voditelj" Multiplicity="1" />
+    <End Type="Model2.Polica" Role="Polica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voditelj">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Polica">
+        <PropertyRef Name="VoditeljId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Klijent_police">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vrijeme_dod" Type="String" Nullable="false" />
+    <NavigationProperty Name="Polica" Relationship="Model2.PolicaKlijent_police" FromRole="Klijent_police" ToRole="Polica" />
+    <Property Name="PolicaID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klijent" Relationship="Model2.KlijentKlijent_police" FromRole="Klijent_police" ToRole="Klijent" />
+    <Property Name="KlijentId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zaposlenik">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" Nullable="false" />
+    <Property Name="Prezime" Type="String" Nullable="false" />
+    <Property Name="OIB" Type="String" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" />
+    <NavigationProperty Name="Zaposlenik_login" Relationship="Model2.ZaposlenikZaposlenik_login" FromRole="Zaposlenik" ToRole="Zaposlenik_login" />
+    <NavigationProperty Name="Klijents" Relationship="Model2.ZaposlenikKlijent" FromRole="Zaposlenik" ToRole="Klijent" />
+    <NavigationProperty Name="Voditelj" Relationship="Model2.VoditeljZaposlenik" FromRole="Zaposlenik" ToRole="Voditelj" />
+    <Property Name="VoditeljId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="ZaposlenikZaposlenik_login">
+    <End Type="Model2.Zaposlenik" Role="Zaposlenik" Multiplicity="1" />
+    <End Type="Model2.Zaposlenik_login" Role="Zaposlenik_login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zaposlenik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Zaposlenik_login">
+        <PropertyRef Name="ZaposlenikId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ZaposlenikKlijent">
+    <End Type="Model2.Zaposlenik" Role="Zaposlenik" Multiplicity="1" />
+    <End Type="Model2.Klijent" Role="Klijent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zaposlenik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Klijent">
+        <PropertyRef Name="ZaposlenikId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PolicaKlijent_police">
+    <End Type="Model2.Polica" Role="Polica" Multiplicity="1" />
+    <End Type="Model2.Klijent_police" Role="Klijent_police" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Polica">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Klijent_police">
+        <PropertyRef Name="PolicaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KlijentKlijent_police">
+    <End Type="Model2.Klijent" Role="Klijent" Multiplicity="1" />
+    <End Type="Model2.Klijent_police" Role="Klijent_police" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Klijent_police">
+        <PropertyRef Name="KlijentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VoditeljZaposlenik">
+    <End Type="Model2.Voditelj" Role="Voditelj" Multiplicity="1" />
+    <End Type="Model2.Zaposlenik" Role="Zaposlenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Voditelj">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Zaposlenik">
+        <PropertyRef Name="VoditeljId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
