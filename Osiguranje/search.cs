@@ -41,18 +41,8 @@ namespace Osiguranje
 
             else
             {
-
-                string abc = textBox1.Text;
-                string query = "SELECT ID, Ime, Prezime, Dat_rod, Grad, Adresa, Spol FROM Klijent WHERE Ime='" + abc + "'";
-                SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf; Integrated Security = True; Connect Timeout = 30");
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataAdapter sda = new SqlDataAdapter();
-
-                    sda.SelectCommand = cmd;
-                    DataTable table = new DataTable();
-                    sda.Fill(table);
-                    dataGridView1.DataSource = table;
-
+                Klijent a = new Klijent();
+                dataGridView1.DataSource = a.search(textBox1.Text);
 
             }
         }

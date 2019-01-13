@@ -36,8 +36,17 @@ namespace Osiguranje
 
         }
 
-    public void search()
+    public DataTable search(string ime)
         {
+            string abc = ime;
+            string query = "SELECT ID, Ime, Prezime, Dat_rod, Grad, Adresa, Spol FROM Klijent WHERE Ime='" + abc + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter();
+
+            sda.SelectCommand = cmd;
+            DataTable table = new DataTable();
+            sda.Fill(table);
+            return table;
 
         }
 
