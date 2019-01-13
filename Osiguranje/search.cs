@@ -41,8 +41,8 @@ namespace Osiguranje
 
             else
             {
-                Klijent a = new Klijent();
-                dataGridView1.DataSource = a.search(textBox1.Text);
+                Zaposlenik c = new Zaposlenik();
+                dataGridView1.DataSource = c.search(textBox1.Text);
 
             }
         }
@@ -57,7 +57,7 @@ namespace Osiguranje
             cmd.CommandText = "SELECT ID, Ime, Prezime FROM Klijent WHERE Id = '" + a + "'";
             a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
 
-            Klijent b = new Klijent();
+            Zaposlenik b = new Zaposlenik();
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable table = b.cellclick(a);
            

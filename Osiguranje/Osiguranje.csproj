@@ -83,7 +83,7 @@
     <Compile Include="dodaj_policu.Designer.cs">
       <DependentUpon>dodaj_policu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klijent.cs" />
+    <Compile Include="Zaposlenik.cs" />
     <Compile Include="klijent_control.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Osiguranje
 {
-    class Klijent : DB
+    class Zaposlenik : DB
     {
 
     
@@ -65,5 +65,57 @@ namespace Osiguranje
             return table;
         }
 
+    public DataTable klijent_ctrl()
+        {
+            string query = "SELECT * FROM Polica";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter();
+
+            sda.SelectCommand = cmd;
+            DataTable table = new DataTable();
+            sda.Fill(table);
+            return table;
+        }
+
+    public DataTable cellclick_2(int id)
+        {
+            int id_police = id;
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Polica WHERE Id = '" + id_police + "'";
+
+            cmd.ExecuteNonQuery();
+
+            DataTable table = new DataTable();
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            data.Fill(table);
+            return table;
+        }
+
+        public void klijentu_dodaj_policu(string id, int id_pol, int id_zap)
+        {
+            DateTime time = DateTime.Now;
+
+            string query = "INSERT INTO Klijent_polica (Id_klijent, Id_pol, Id_zap, Vrijeme) VALUES ('" + id + "', '" + id_pol + "', '" + id_zap + "', '" + time + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            cmd.ExecuteNonQuery();
+ 
+            MessageBox.Show("Pridodana polica klijentu!");
+        }
+
+        public DataTable prikazi_klijent_policu(string id)
+        {
+            string query = "SELECT Tip, Naziv, Vrijednost, Rata FROM Polica INNER JOIN Klijent_polica ON Klijent_polica.Id_klijent='" + id + "' AND Polica.Id = Klijent_polica.Id_pol";
+           
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter sda = new SqlDataAdapter();
+
+            sda.SelectCommand = cmd;
+            DataTable table = new DataTable();
+            sda.Fill(table);
+
+            return table;
+        }
     }
 }

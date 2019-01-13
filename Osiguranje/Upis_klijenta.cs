@@ -77,7 +77,7 @@ namespace Osiguranje
             else
             {
                 
-                Klijent a = new Klijent();
+                Zaposlenik a = new Zaposlenik();
                 a.upis_klijent(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, comboBox1.Text, this.read);
 
 

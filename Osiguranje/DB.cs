@@ -46,7 +46,9 @@ namespace Osiguranje
 
         ~DB()
         {
-            con.Close();
+            if (con.State == System.Data.ConnectionState.Open)
+                con.Close();
+            con.Dispose();
             con = null;
         }
 
