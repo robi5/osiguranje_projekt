@@ -41,6 +41,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,6 +58,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,6 +87,19 @@
     <Compile Include="dodaj_policu.Designer.cs">
       <DependentUpon>dodaj_policu.cs</DependentUpon>
     </Compile>
+    <Compile Include="prozor_stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prozor_stats.Designer.cs">
+      <DependentUpon>prozor_stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stats.Designer.cs">
+      <DependentUpon>stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stats_class.cs" />
     <Compile Include="Zaposlenik.cs" />
     <Compile Include="klijent_control.cs">
       <SubType>Form</SubType>
@@ -172,8 +189,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="prozor_stats.resx">
+      <DependentUpon>prozor_stats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="search.resx">
       <DependentUpon>search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stats.resx">
+      <DependentUpon>stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Upis_klijenta.resx">
       <DependentUpon>Upis_klijenta.cs</DependentUpon>

@@ -39,17 +39,17 @@ namespace Osiguranje
 
         public DB()
         {
-            string constring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robert\Desktop\projekt_PI\projekt_PI\Projekt\Osiguranje\baza.mdf;Integrated Security=True;Connect Timeout=30";
+            string constring = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\baza.mdf;Integrated Security=True;Connect Timeout=30";
             con = new SqlConnection(constring);
             con.Open();
         }
 
         ~DB()
         {
-            if (con.State == System.Data.ConnectionState.Open)
-                con.Close();
-            con.Dispose();
-            con = null;
+           // if (con.State == System.Data.ConnectionState.Open)
+           //    con.Close();
+          // con.Dispose();
+          // con = null;
         }
 
         public SqlDataReader DohvatiDataReader(string sqlUpit)

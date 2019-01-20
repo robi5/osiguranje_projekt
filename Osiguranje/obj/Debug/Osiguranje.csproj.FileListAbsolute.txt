@@ -119,3 +119,6 @@ C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osigura
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.csproj.CopyComplete
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.exe
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.pdb
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MaterialSkin.dll
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.stats.resources
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.prozor_stats.resources
