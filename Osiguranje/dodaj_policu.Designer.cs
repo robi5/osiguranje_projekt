@@ -45,7 +45,7 @@ namespace Osiguranje
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 35);
+            this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 50);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace Osiguranje
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(138, 115);
+            this.label2.Location = new System.Drawing.Point(12, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 47);
             this.label2.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace Osiguranje
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(105, 195);
+            this.label3.Location = new System.Drawing.Point(12, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 50);
             this.label3.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace Osiguranje
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(138, 278);
+            this.label4.Location = new System.Drawing.Point(12, 279);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 47);
             this.label4.TabIndex = 3;
@@ -81,7 +81,7 @@ namespace Osiguranje
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.richTextBox1.Location = new System.Drawing.Point(267, 35);
+            this.richTextBox1.Location = new System.Drawing.Point(163, 32);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(469, 50);
             this.richTextBox1.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace Osiguranje
             // richTextBox2
             // 
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.richTextBox2.Location = new System.Drawing.Point(267, 115);
+            this.richTextBox2.Location = new System.Drawing.Point(163, 115);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(469, 50);
             this.richTextBox2.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace Osiguranje
             // richTextBox3
             // 
             this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.richTextBox3.Location = new System.Drawing.Point(267, 195);
+            this.richTextBox3.Location = new System.Drawing.Point(163, 199);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(469, 50);
             this.richTextBox3.TabIndex = 6;
@@ -108,7 +108,7 @@ namespace Osiguranje
             // richTextBox4
             // 
             this.richTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.richTextBox4.Location = new System.Drawing.Point(267, 275);
+            this.richTextBox4.Location = new System.Drawing.Point(163, 275);
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.Size = new System.Drawing.Size(469, 50);
             this.richTextBox4.TabIndex = 7;
@@ -116,7 +116,7 @@ namespace Osiguranje
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(590, 374);
+            this.button1.Location = new System.Drawing.Point(480, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 64);
             this.button1.TabIndex = 8;
@@ -126,7 +126,7 @@ namespace Osiguranje
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(267, 374);
+            this.button2.Location = new System.Drawing.Point(163, 341);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(152, 64);
             this.button2.TabIndex = 9;
@@ -138,7 +138,7 @@ namespace Osiguranje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(669, 411);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox4);

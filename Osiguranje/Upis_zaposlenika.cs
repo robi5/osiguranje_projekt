@@ -26,8 +26,7 @@ namespace Osiguranje
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new Main_poslovođa().Show();
+            this.Close();            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,8 +66,6 @@ namespace Osiguranje
             a.dodaj_zaposlenika(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
 
             this.Close();
-            new Main_poslovođa().Show();
-
             }
         }
     }

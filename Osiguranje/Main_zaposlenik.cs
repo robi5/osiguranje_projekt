@@ -8,10 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Osiguranje
 {
-    public partial class Main_zaposlenik : Form
+    public partial class Main_zaposlenik : MaterialForm
     {
         
         private int x;
@@ -22,26 +24,45 @@ namespace Osiguranje
             
             InitializeComponent();
             this.x= read;
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
         
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            new Upis_klijenta(this.x).Show();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
-            new Login_zaposlenik().Show();
+            new Login_form().Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Upis_klijenta a = new Upis_klijenta(this.x);
+            a.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
             new search(this.x).Show();
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Login_form().Show();
+        }
+
+        private void Main_zaposlenik_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

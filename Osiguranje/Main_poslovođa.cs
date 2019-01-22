@@ -7,42 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Osiguranje
 {
-    public partial class Main_poslovođa : Form
+    public partial class Main_poslovođa : MaterialForm
     {
         public Main_poslovođa()
         {
             InitializeComponent();
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
-        // klikanje na 'upis zaposlenika'
-
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new Upis_zaposlenika().Show();
+
+            Upis_zaposlenika a = new Upis_zaposlenika();
+            a.ShowDialog();
         }
 
-        // vracanje natrag
-
-        private void button2_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new Login_poslovođe().Show();
+            dodaj_policu a = new dodaj_policu();
+            a.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new dodaj_policu().Show();
+            stats a = new stats();
+            a.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-            new stats().Show();
+            new Login_form().Show();
         }
     }
 }

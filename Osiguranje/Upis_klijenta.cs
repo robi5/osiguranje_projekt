@@ -29,7 +29,6 @@ namespace Osiguranje
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            new Main_zaposlenik(this.read).Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,8 +81,6 @@ namespace Osiguranje
 
 
                 this.Close();
-                new Main_zaposlenik(this.read).Show();
-
             }
 
 

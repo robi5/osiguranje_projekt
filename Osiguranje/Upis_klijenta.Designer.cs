@@ -126,7 +126,6 @@ namespace Osiguranje
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 8;
-   
             // 
             // textBox3
             // 
@@ -134,7 +133,6 @@ namespace Osiguranje
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 9;
-            
             // 
             // textBox4
             // 
@@ -142,7 +140,6 @@ namespace Osiguranje
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 10;
-            
             // 
             // textBox5
             // 
@@ -167,7 +164,7 @@ namespace Osiguranje
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(128, 354);
+            this.button1.Location = new System.Drawing.Point(37, 353);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 46);
             this.button1.TabIndex = 14;
@@ -177,7 +174,7 @@ namespace Osiguranje
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(296, 354);
+            this.button2.Location = new System.Drawing.Point(140, 353);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 46);
             this.button2.TabIndex = 15;
@@ -210,7 +207,7 @@ namespace Osiguranje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(259, 411);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);

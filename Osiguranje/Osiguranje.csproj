@@ -87,6 +87,12 @@
     <Compile Include="dodaj_policu.Designer.cs">
       <DependentUpon>dodaj_policu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_form.Designer.cs">
+      <DependentUpon>Login_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="prozor_stats.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="klijent_control.resx">
       <DependentUpon>klijent_control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_form.resx">
+      <DependentUpon>Login_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_poslovođe.resx">
       <DependentUpon>Login_poslovođe.cs</DependentUpon>
