@@ -7,4 +7,5 @@
 23.1.2019.
 
 username i password poslovode: admin
+username i password zaposlenika: test
 pretrazivanje testnih klijenata pomocu imena: Mirko
