@@ -105,11 +105,8 @@ C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\System.
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.csprojAssemblyReference.cache
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.dodaj_policu.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.klijent_control.resources
-C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Login_poslovođe.resources
-C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Login_zaposlenik.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Main_poslovođa.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Main_zaposlenik.resources
-C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Početna.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Properties.Resources.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.search.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Upis_klijenta.resources

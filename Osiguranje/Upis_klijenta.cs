@@ -48,7 +48,7 @@ namespace Osiguranje
                 MessageBox.Show("Niste upisali sva polja!");
             }
 
-            else if (String.IsNullOrEmpty(textBox4.Text))
+            else if (String.IsNullOrEmpty(dateTimePicker1.Text))
             {
                 MessageBox.Show("Niste upisali sva polja!");
             }
@@ -77,7 +77,7 @@ namespace Osiguranje
             {
                 
                 Zaposlenik a = new Zaposlenik();
-                a.upis_klijent(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, comboBox1.Text, this.read);
+                a.upis_klijent(textBox1.Text, textBox2.Text, textBox3.Text, dateTimePicker1.Text.ToString(), textBox5.Text, textBox6.Text, textBox7.Text, comboBox1.Text, this.read);
 
 
                 this.Close();

@@ -33,6 +33,7 @@ namespace Osiguranje
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Dodan Klijent!");
+            
 
         }
 

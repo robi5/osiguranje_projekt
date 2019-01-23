@@ -33,7 +33,6 @@ namespace Osiguranje
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            new Main_poslovođa().Show();  
         }
 
         private void button2_Click(object sender, EventArgs e)

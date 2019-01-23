@@ -114,18 +114,6 @@
       <DependentUpon>klijent_control.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs" />
-    <Compile Include="Login_zaposlenik.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login_zaposlenik.Designer.cs">
-      <DependentUpon>Login_zaposlenik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login_poslovođe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login_poslovođe.Designer.cs">
-      <DependentUpon>Login_poslovođe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main_poslovođa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +125,6 @@
     </Compile>
     <Compile Include="Main_zaposlenik.Designer.cs">
       <DependentUpon>Main_zaposlenik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Početna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Početna.Designer.cs">
-      <DependentUpon>Početna.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,20 +156,11 @@
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_poslovođe.resx">
-      <DependentUpon>Login_poslovođe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login_zaposlenik.resx">
-      <DependentUpon>Login_zaposlenik.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main_poslovođa.resx">
       <DependentUpon>Main_poslovođa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_zaposlenik.resx">
       <DependentUpon>Main_zaposlenik.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Početna.resx">
-      <DependentUpon>Početna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

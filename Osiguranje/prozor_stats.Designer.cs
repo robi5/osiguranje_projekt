@@ -58,7 +58,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chart1);
             this.Name = "prozor_stats";
-            this.Text = "prozor_stats";
+            this.ShowIcon = false;
+            this.Text = "Statistika ";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
