@@ -26,11 +26,7 @@ namespace Osiguranje
             materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Blue400, Primary.Blue500,
                 Primary.Blue500, Accent.LightBlue200,
-                TextShade.WHITE);
-            DateTime now = new DateTime();
-            now = DateTime.Now;
-            MessageBox.Show(now.ToString());
-            
+                TextShade.WHITE);          
         }
 
 

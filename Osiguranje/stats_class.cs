@@ -66,7 +66,7 @@ namespace Osiguranje
 
 
 
-            string query1 = "SELECT COUNT(*) FROM Klijent_polica";
+            string query1 = "SELECT COUNT(*) FROM Klijent";
             int count = 0;
 
 
