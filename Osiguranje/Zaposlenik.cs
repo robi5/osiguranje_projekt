@@ -118,5 +118,23 @@ namespace Osiguranje
 
             return table;
         }
+
+        public void kontrola_prijave(int id)
+        {
+            DateTime now = DateTime.Now;
+            string query = "INSERT INTO Kontrola (id_zap, vrijeme_prijave) VALUES ('" + id + "', '" + now + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+          
+        }
+
+        public void kontrola_odjave(int id)
+        {
+            DateTime now = DateTime.Now;
+            string query = "INSERT INTO Kontrola (id_zap, vrijeme_odjave) VALUES ('" + id + "', '" + now + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

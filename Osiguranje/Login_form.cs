@@ -52,6 +52,8 @@ namespace Osiguranje
 
                     else
                     {
+                        Zaposlenik x = new Zaposlenik();
+                        x.kontrola_prijave(id);
                         new Main_zaposlenik(id).Show();
                         this.Hide();
                     }

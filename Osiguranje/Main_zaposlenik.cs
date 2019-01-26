@@ -56,6 +56,8 @@ namespace Osiguranje
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
+            Zaposlenik x = new Zaposlenik();
+            x.kontrola_odjave(this.x);
             this.Close();
             new Login_form().Show();
         }
