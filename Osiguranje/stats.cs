@@ -16,7 +16,10 @@ namespace Osiguranje
         {
             InitializeComponent();
             combo();
-            
+            comboBox2.Items.Add("Ukupan broj korisnika police");
+            comboBox2.Items.Add("Po spolu");
+
+
 
         }
 
@@ -37,11 +40,29 @@ namespace Osiguranje
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string x = comboBox2.Text;
+            switch (x)
+            {
+                case "Ukupan broj korisnika police":
+                    { 
+                        prozor_stats kek = new prozor_stats(comboBox1.Text);
+                        kek.ShowDialog();
+                        break;
+                    }
 
-            prozor_stats kek = new prozor_stats(comboBox1.Text);
-            kek.ShowDialog();
-            stats_class xyz = new stats_class();
+                case "Po spolu":
+                    {
+                        prozor_stats_spol kek = new prozor_stats_spol(comboBox1.Text);
+                        kek.ShowDialog();
+                        break;
+                    }
 
+                default:
+                    {
+                        MessageBox.Show("Odaberite kriterij");
+                        break;
+                    }
+            }
             
 
 

@@ -79,5 +79,65 @@ namespace Osiguranje
             return count;
         }
 
+        public int ukupan_broj_klijent()
+        {
+
+            int ukupan;
+            string query = "SELECT COUNT(*) FROM Klijent";
+            
+
+            using (SqlCommand cmdCount = new SqlCommand(query, con))
+            {
+
+                ukupan = (int)cmdCount.ExecuteScalar();
+            }
+
+
+
+            return ukupan;
+        }
+
+        public int ukupan_broj_zensko(string naziv)
+        {
+            string query1 = "SELECT ID FROM Polica WHERE naziv='" + naziv + "'";
+
+            SqlCommand cmd = new SqlCommand(query1, con);
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+            string spol = "Žensko";
+            int zensko;
+
+            string query = "SELECT COUNT(*) FROM Klijent_polica INNER JOIN Klijent ON Klijent_polica.Id_klijent = Klijent.Id AND Klijent.Spol = '" + spol + "'";
+
+
+            using (SqlCommand cmdCount = new SqlCommand(query, con))
+            {
+
+                zensko = (int)cmdCount.ExecuteScalar();
+            }
+                
+                return zensko;     
+        }
+
+        public int ukupan_broj_musko(string naziv)
+        {
+            string query1 = "SELECT ID FROM Polica WHERE naziv='" + naziv + "'";
+
+            SqlCommand cmd = new SqlCommand(query1, con);
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+
+            int musko;
+            string spol = "Muško";
+
+            string query = "SELECT COUNT(*) FROM Klijent_polica INNER JOIN Klijent ON Klijent_polica.Id_klijent = Klijent.Id AND Klijent.Spol = '" + spol + "'";
+            MessageBox.Show(query);
+
+            using (SqlCommand cmdCount = new SqlCommand(query, con))
+            {
+
+                musko = (int)cmdCount.ExecuteScalar();
+            }
+            MessageBox.Show(musko.ToString());
+            return musko;
+        }
     }
 }

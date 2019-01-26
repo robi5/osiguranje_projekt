@@ -120,3 +120,4 @@ C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\Materia
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.stats.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.prozor_stats.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Login_form.resources
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.prozor_stats_spol.resources

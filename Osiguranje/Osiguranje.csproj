@@ -99,6 +99,12 @@
     <Compile Include="prozor_stats.Designer.cs">
       <DependentUpon>prozor_stats.cs</DependentUpon>
     </Compile>
+    <Compile Include="prozor_stats_spol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prozor_stats_spol.Designer.cs">
+      <DependentUpon>prozor_stats_spol.cs</DependentUpon>
+    </Compile>
     <Compile Include="stats.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="prozor_stats.resx">
       <DependentUpon>prozor_stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prozor_stats_spol.resx">
+      <DependentUpon>prozor_stats_spol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="search.resx">
       <DependentUpon>search.cs</DependentUpon>
