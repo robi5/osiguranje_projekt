@@ -136,5 +136,25 @@ namespace Osiguranje
             cmd.ExecuteNonQuery();
 
         }
+
+        public DataTable kontrola(string ime)
+        {
+            //ne radi
+            string query = "SELECT ID FROM Zaposlenik WHERE Ime='" + ime + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+
+            string query1 = "SELECT (vrijeme_prijave, vrijeme_odjave) FROM Kontrola WHERE id_zap ='" + id + "'";
+            SqlCommand cmd1= new SqlCommand(query, con);
+
+            SqlDataAdapter reader = new SqlDataAdapter();
+            reader.SelectCommand = cmd1;
+            DataTable table = new DataTable();
+            table.Columns.Add(new DataColumn("vrijeme_prijave", typeof(String)));
+            table.Columns.Add(new DataColumn("vrijeme_odjave", typeof(String)));
+            reader.Fill(table);
+
+            return table;
+        }
     }
 }

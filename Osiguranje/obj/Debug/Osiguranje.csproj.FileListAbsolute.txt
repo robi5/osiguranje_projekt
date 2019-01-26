@@ -121,3 +121,7 @@ C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osigura
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.prozor_stats.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.Login_form.resources
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.prozor_stats_spol.resources
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osiguranje.zaposlenik_control.resources
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MetroFramework.Design.dll
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MetroFramework.dll
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MetroFramework.Fonts.dll

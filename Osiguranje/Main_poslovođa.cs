@@ -52,5 +52,11 @@ namespace Osiguranje
             this.Close();
             new Login_form().Show();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            zaposlenik_control xyz = new zaposlenik_control();
+            xyz.ShowDialog();
+        }
     }
 }

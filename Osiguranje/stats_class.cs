@@ -106,7 +106,7 @@ namespace Osiguranje
             string spol = "Žensko";
             int zensko;
 
-            string query = "SELECT COUNT(*) FROM Klijent_polica INNER JOIN Klijent ON Klijent_polica.Id_klijent = Klijent.Id AND Klijent.Spol = '" + spol + "'";
+            string query = "SELECT COUNT(*) FROM Klijent_polica INNER JOIN Klijent ON Klijent_polica.Id_klijent = Klijent.Id AND Klijent.Spol = '" + spol + "' AND Klijent_polica.id_pol ='" + id + "'";
 
 
             using (SqlCommand cmdCount = new SqlCommand(query, con))
@@ -128,15 +128,13 @@ namespace Osiguranje
             int musko;
             string spol = "Muško";
 
-            string query = "SELECT COUNT(*) FROM Klijent_polica INNER JOIN Klijent ON Klijent_polica.Id_klijent = Klijent.Id AND Klijent.Spol = '" + spol + "'";
-            MessageBox.Show(query);
+            string query = "SELECT COUNT(*) FROM Klijent_polica INNER JOIN Klijent ON Klijent_polica.Id_klijent = Klijent.Id AND Klijent.Spol = '" + spol + "' AND Klijent_polica.id_pol ='" + id + "'";
 
             using (SqlCommand cmdCount = new SqlCommand(query, con))
             {
 
                 musko = (int)cmdCount.ExecuteScalar();
             }
-            MessageBox.Show(musko.ToString());
             return musko;
         }
     }

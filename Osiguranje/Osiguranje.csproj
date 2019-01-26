@@ -44,6 +44,15 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -153,6 +162,12 @@
       <DependentUpon>Upis_zaposlenika.cs</DependentUpon>
     </Compile>
     <Compile Include="Voditelj.cs" />
+    <Compile Include="zaposlenik_control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zaposlenik_control.Designer.cs">
+      <DependentUpon>zaposlenik_control.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="dodaj_policu.resx">
       <DependentUpon>dodaj_policu.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Upis_zaposlenika.resx">
       <DependentUpon>Upis_zaposlenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zaposlenik_control.resx">
+      <DependentUpon>zaposlenik_control.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bazaDataSet.xsc">
       <DependentUpon>bazaDataSet.xsd</DependentUpon>
