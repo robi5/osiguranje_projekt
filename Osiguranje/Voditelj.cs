@@ -36,11 +36,22 @@ namespace Osiguranje
             string username = d1;
             string password = e1;
 
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Zaposlenik WHERE username='" + username + "'", con);
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                MessageBox.Show("Korisničko ime već postoji!");
+            }
+
+            else
+            { 
             string query = "INSERT INTO Zaposlenik (Ime, Prezime, OIB, username, password) VALUES ('" + ime + "', '" + prezime + "', '" + OIB + "', '" + username + "', '" + password + "');";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Dodan zaposlenik!");
-
+            }
         }
 
     }
