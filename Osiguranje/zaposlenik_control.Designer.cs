@@ -28,29 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.kontrolaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bazaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kontrolaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.zaposlenikcontrolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kontrolaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.kontrolaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikcontrolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(12, 32);
+            this.materialLabel1.Location = new System.Drawing.Point(12, 91);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(160, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(156, 18);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Upisi ime zaposlenika:";
             // 
@@ -60,7 +71,7 @@
             this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton1.Depth = 0;
             this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(294, 19);
+            this.materialFlatButton1.Location = new System.Drawing.Point(330, 83);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
@@ -75,7 +86,7 @@
             // 
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(174, 32);
+            this.materialSingleLineTextField1.Location = new System.Drawing.Point(178, 87);
             this.materialSingleLineTextField1.MaxLength = 32767;
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
@@ -88,9 +99,20 @@
             this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(12, 113);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 4;
+            this.metroButton1.Text = "TRAŽI";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // metroGrid1
             // 
             this.metroGrid1.AllowUserToResizeRows = false;
+            this.metroGrid1.AutoGenerateColumns = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -104,9 +126,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.metroGrid1.DataSource = this.kontrolaBindingSource3;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -118,7 +138,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(12, 94);
+            this.metroGrid1.Location = new System.Drawing.Point(16, 143);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -131,43 +151,41 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(240, 150);
-            this.metroGrid1.TabIndex = 3;
-            this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
-            this.Column1.ReadOnly = true;
-            this.Column2.ReadOnly = true;
-            this.metroGrid1.Columns[0].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
-            this.metroGrid1.Columns[1].DefaultCellStyle.Format = "MM/dd/yyyy hh:mm:ss tt";
+            this.metroGrid1.Size = new System.Drawing.Size(326, 150);
+            this.metroGrid1.TabIndex = 5;
             // 
-            // metroButton1
+            // kontrolaBindingSource
             // 
-            this.metroButton1.Location = new System.Drawing.Point(16, 65);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "TRAŽI";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.kontrolaBindingSource.DataSource = typeof(Osiguranje.Kontrola);
             // 
-            // Column1
+            // bazaDataSetBindingSource
             // 
-            this.Column1.DataPropertyName = "vrijeme_prijave";
-            this.Column1.HeaderText = "Prijava";
-            this.Column1.Name = "Column1";
+            this.bazaDataSetBindingSource.DataSource = typeof(Osiguranje.bazaDataSet);
+            this.bazaDataSetBindingSource.Position = 0;
             // 
-            // Column2
+            // kontrolaBindingSource1
             // 
-            this.Column2.DataPropertyName = "vrijeme_odjave";
-            this.Column2.HeaderText = "Odjava";
-            this.Column2.Name = "Column2";
+            this.kontrolaBindingSource1.DataSource = typeof(Osiguranje.Kontrola);
+            // 
+            // zaposlenikcontrolBindingSource
+            // 
+            this.zaposlenikcontrolBindingSource.DataSource = typeof(Osiguranje.zaposlenik_control);
+            // 
+            // kontrolaBindingSource2
+            // 
+            this.kontrolaBindingSource2.DataSource = typeof(Osiguranje.Kontrola);
+            // 
+            // kontrolaBindingSource3
+            // 
+            this.kontrolaBindingSource3.DataSource = typeof(Osiguranje.Kontrola);
             // 
             // zaposlenik_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 264);
-            this.Controls.Add(this.metroButton1);
+            this.ClientSize = new System.Drawing.Size(477, 304);
             this.Controls.Add(this.metroGrid1);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.materialFlatButton1);
             this.Controls.Add(this.materialLabel1);
@@ -175,6 +193,12 @@
             this.ShowIcon = false;
             this.Text = "Kontrola";
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaposlenikcontrolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kontrolaBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,9 +209,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private System.Windows.Forms.BindingSource kontrolaBindingSource;
+        private System.Windows.Forms.BindingSource kontrolaBindingSource3;
+        private System.Windows.Forms.BindingSource bazaDataSetBindingSource;
+        private System.Windows.Forms.BindingSource kontrolaBindingSource1;
+        private System.Windows.Forms.BindingSource zaposlenikcontrolBindingSource;
+        private System.Windows.Forms.BindingSource kontrolaBindingSource2;
     }
 }

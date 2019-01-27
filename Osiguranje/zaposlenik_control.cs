@@ -8,14 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Osiguranje
 {
-    public partial class zaposlenik_control : Form
+    public partial class zaposlenik_control : MaterialForm
     {
         public zaposlenik_control()
         {
             InitializeComponent();
+
+            var skinManager = MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new ColorScheme(Primary.Indigo800, Primary.Indigo900, Primary.Indigo500, Accent.Indigo200, TextShade.WHITE);
+
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
@@ -23,10 +31,7 @@ namespace Osiguranje
             this.Close();
         }
 
-        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void metroButton1_Click(object sender, EventArgs e)
         {

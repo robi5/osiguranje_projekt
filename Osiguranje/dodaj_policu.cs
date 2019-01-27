@@ -8,40 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 
 namespace Osiguranje
 {
-    public partial class dodaj_policu : Form
+    public partial class dodaj_policu : MaterialForm
     {
         public dodaj_policu()
         {
             InitializeComponent();
+            var skinManager = MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new ColorScheme(Primary.Indigo800, Primary.Indigo900, Primary.Indigo500, Accent.Indigo200, TextShade.WHITE);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(richTextBox1.Text))
+            if(String.IsNullOrEmpty(materialSingleLineTextField1.Text))
             {
                 MessageBox.Show("Niste upisali sva polja!");
             }
 
-            else if (String.IsNullOrEmpty(richTextBox2.Text))
+            else if (String.IsNullOrEmpty(materialSingleLineTextField2.Text))
             {
                 MessageBox.Show("Niste upisali sva polja!");
             }
 
-            else if (String.IsNullOrEmpty(richTextBox3.Text))
+            else if (String.IsNullOrEmpty(materialSingleLineTextField3.Text))
             {
                 MessageBox.Show("Niste upisali sva polja!");
             }
 
-            else if (String.IsNullOrEmpty(richTextBox4.Text))
+            else if (String.IsNullOrEmpty(materialSingleLineTextField4.Text))
             {
                 MessageBox.Show("Niste upisali sva polja!");
             }
@@ -49,10 +52,15 @@ namespace Osiguranje
             else
             {
                 Voditelj a = new Voditelj();
-                a.dodaj_policu(richTextBox1.Text, richTextBox2.Text, richTextBox3.Text, richTextBox4.Text);
+                a.dodaj_policu(materialSingleLineTextField1.Text, materialSingleLineTextField2.Text, materialSingleLineTextField3.Text, materialSingleLineTextField4.Text);
 
                 this.Close();
             }
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
