@@ -139,25 +139,8 @@ namespace Osiguranje
 
 
 
-        public List<Kontrola> kontrola(string ime)
-        {
-            //ne radi
-            string query = "SELECT ID FROM Zaposlenik WHERE Ime='" + ime + "'";
-            SqlCommand cmd = new SqlCommand(query, con);
-            int id = Convert.ToInt32(cmd.ExecuteScalar());
+        
 
-            string query1 = "SELECT * FROM Kontrola WHERE id_zap ='" + id + "'";
-            List<Kontrola> lista = new List<Kontrola>();
-            DB x = new DB();
-            SqlDataReader a = x.DohvatiDataReader(query1);
-            while (a.Read())
-            {
-                Kontrola abc = new Kontrola(a);
-                lista.Add(abc);
-            }
-            a.Close();
-            
-            return lista;
-        }
+     
     }
 }

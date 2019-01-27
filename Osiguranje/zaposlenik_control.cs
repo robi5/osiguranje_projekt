@@ -31,12 +31,11 @@ namespace Osiguranje
             this.Close();
         }
 
-     
-
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void zaposlenik_control_Load(object sender, EventArgs e)
         {
-            Zaposlenik kek = new Zaposlenik();
-            metroGrid1.DataSource = kek.kontrola(materialSingleLineTextField1.Text);
+            // TODO: This line of code loads data into the 'bazaDataSet3.Kontrola' table. You can move, or remove it, as needed.
+            this.kontrolaTableAdapter.Fill(this.bazaDataSet3.Kontrola);
+
         }
     }
 }

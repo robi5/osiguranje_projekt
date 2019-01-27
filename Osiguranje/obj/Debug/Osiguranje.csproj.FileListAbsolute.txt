@@ -125,3 +125,5 @@ C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\obj\Debug\Osigura
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MetroFramework.Design.dll
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MetroFramework.dll
 C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\baza.mdf
+C:\Users\Robert\Documents\GitHub\osiguranje_projekt\Osiguranje\bin\Debug\baza_log.ldf

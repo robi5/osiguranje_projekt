@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Osiguranje
 {
-    public partial class klijent_control : Form
+    public partial class klijent_control : MaterialForm
     {
         // id zaposlenika koji se ulogirao
         private int x;
@@ -33,21 +35,19 @@ namespace Osiguranje
             textBox2.Text = b;
             textBox3.Text = c;
             this.x = read;
+            var skinManager = MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new ColorScheme(Primary.Indigo800, Primary.Indigo900, Primary.Indigo500, Accent.Indigo200, TextShade.WHITE);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            Zaposlenik x = new Zaposlenik();
-            dataGridView1.DataSource = x.klijent_ctrl();
-
-        }
+ 
 
         // klik na ćeliju i prepisivanje u textbox , kasnije upis ako kliknemo 'da'
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void metroGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id_pol = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
+            id_pol = Convert.ToInt32(metroGrid2.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM Polica WHERE Id = '" + id_pol + "'";
@@ -68,15 +68,24 @@ namespace Osiguranje
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+     
+        // prikaz tablica klijenata
+
+
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new search(x).Show();
+            Zaposlenik x = new Zaposlenik();
+            metroGrid2.DataSource = x.klijent_ctrl();
         }
 
-        //dodavanja police
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            Zaposlenik y = new Zaposlenik();
+            metroGrid1.DataSource = y.prikazi_klijent_policu(id);
+        }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void materialFlatButton3_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBox4.Text))
             {
@@ -85,10 +94,10 @@ namespace Osiguranje
 
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Jeste li sigurni da želite pridodati policu klijentu?"," ", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Jeste li sigurni da želite pridodati policu klijentu?", " ", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    
+
                     Zaposlenik kek = new Zaposlenik();
                     kek.klijentu_dodaj_policu(this.id, this.id_pol, this.x);
 
@@ -97,18 +106,16 @@ namespace Osiguranje
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    
+
                 }
-               
+
             }
         }
 
-        // prikaz tablica klijenata
-
-        private void button1_Click(object sender, EventArgs e)
+        private void materialFlatButton4_Click(object sender, EventArgs e)
         {
-            Zaposlenik y = new Zaposlenik();            
-            dataGridView2.DataSource = y.prikazi_klijent_policu(id);
+            this.Close();
+            new search(x).Show();
         }
     }
 }

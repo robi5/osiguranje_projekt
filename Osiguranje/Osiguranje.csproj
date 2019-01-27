@@ -104,6 +104,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bazaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bazaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazaDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bazaDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazaDataSet31.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="dodaj_policu.cs">
       <SubType>Form</SubType>
@@ -111,7 +121,6 @@
     <Compile Include="dodaj_policu.Designer.cs">
       <DependentUpon>dodaj_policu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kontrola.cs" />
     <Compile Include="Login_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +259,28 @@
     </None>
     <None Include="bazaDataSet1.xss">
       <DependentUpon>bazaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet2.xsc">
+      <DependentUpon>bazaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazaDataSet2.xss">
+      <DependentUpon>bazaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet31.xsc">
+      <DependentUpon>bazaDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="bazaDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bazaDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazaDataSet31.xss">
+      <DependentUpon>bazaDataSet31.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\bazaDataSet.datasource" />

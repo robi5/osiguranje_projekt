@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Osiguranje
 {
-    public partial class stats : Form
+    public partial class stats : MaterialForm
     {
         public stats()
         {
@@ -19,6 +21,15 @@ namespace Osiguranje
             comboBox2.Items.Add("Ukupan broj korisnika police");
             comboBox2.Items.Add("Po spolu");
 
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
 
 
         }
@@ -33,18 +44,13 @@ namespace Osiguranje
             comboBox1.DataSource = itemi;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             string x = comboBox2.Text;
             switch (x)
             {
                 case "Ukupan broj korisnika police":
-                    { 
+                    {
                         prozor_stats kek = new prozor_stats(comboBox1.Text);
                         kek.ShowDialog();
                         break;
@@ -63,10 +69,12 @@ namespace Osiguranje
                         break;
                     }
             }
-            
 
+        }
 
-
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
